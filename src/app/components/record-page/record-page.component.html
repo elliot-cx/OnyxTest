@@ -1,0 +1,23 @@
+<app-header></app-header>
+<div class="content flex row">
+    <div class="card rounded shadow flex column" *ngIf="game$ | async as game">
+        <h3>Partie de {{game.playerName}}</h3>
+        <span>Réalisée le {{game.dateTime | date: 'd MMMM y à HH:mm:ss'}}</span>
+        <p>Temps moyen : <strong>{{game.averageTime}} ms</strong></p>
+        <p>Meilleur temps : <strong>{{game.bestTime}} ms</strong></p>
+        <div *ngIf="clicks$ | async as clicks">
+            Liste des clicks de la partie :
+            <div class="flex column" id="clicks">
+                <p *ngFor="let click of clicks">{{click.clickTime}}ms</p>
+            </div>
+        </div>
+    </div>
+    <div class="table">
+        <h3>Classement Personnel</h3>
+        <app-score-table *ngIf="game$ | async as game" [playerName]="game.playerName" [currentGame]="game"></app-score-table>
+    </div>
+    <div class="table">
+        <h3>Classement Global</h3>
+        <app-score-table *ngIf="game$ | async as game" [currentGame]="game"></app-score-table>
+    </div>
+</div>

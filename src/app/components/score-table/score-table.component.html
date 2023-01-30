@@ -1,0 +1,25 @@
+<div class="container">
+  <table *ngIf="games$ | async as games" class="rounded shadow">
+    <tr>
+      <th>N°</th>
+      <th>Joueur</th>
+      <th>Temps moyen</th>
+      <th>Meilleur temps</th>
+      <th>Date</th>
+      <th>Liens</th>
+    </tr>
+    <tr *ngFor="let game of games; index as i" [ngClass]="game.gameId == currentGame?.gameId ? 'active' : '' ">
+        <td>{{offset+1 + i}}</td>
+        <td>{{game.playerName}}</td>
+        <td>{{game.averageTime}} ms</td>
+        <td>{{game.bestTime}} ms</td>
+        <td>{{game.dateTime | date}}</td>
+        <td><a (click)="onDetailsClick(game.gameId)">détails</a></td>
+    </tr>
+</table>
+<div id="buttons" class="flex center" *ngIf="isPaging">
+  <button class="rounded" (click)="onPagingLeft()">Précédent</button>
+  <button class="rounded" (click)="onPagingRight()">Suivant</button>
+</div>
+
+</div>

@@ -1,0 +1,30 @@
+.content{
+    background: var(--background-gradient);
+    height: 100vh;
+    width: 100%;
+}
+
+img{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+    user-select: none;
+    cursor: pointer;
+}
+
+.infos{
+    padding-top: 1rem;
+    text-align: center;
+    color: white;
+}
+
+.infos > p {
+    font-size: var(--bigger-font-size);
+}
+
+h3{
+    text-align: center;
+    color: white;
+    padding-top: 1rem;
+}

@@ -1,0 +1,22 @@
+.container{
+    margin: 0.5rem;
+}
+
+.active{
+    background-color: var(--primary);
+    color: white;
+}
+
+table{
+    border-collapse: collapse;
+    background-color: white;
+    color: black;
+}
+td,th{
+    padding: 0.4rem;
+    text-align: center;
+}
+
+#buttons{
+    margin-top: 0.4rem;
+}

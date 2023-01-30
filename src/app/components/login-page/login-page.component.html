@@ -1,0 +1,8 @@
+<div class="content flex center">
+    <form class="card rounded flex column" #formulaire="ngForm" (ngSubmit)="onSubmitForm(formulaire)">
+        <label for="username">Entrez votre pseudo :</label>
+        <input class="rounded" type="text" id="username" ngModel required name="username">
+        <button class="rounded" type="submit">Se connecter</button>
+        <a routerLink="/">Retourner à l'accueil</a>
+    </form>
+</div>

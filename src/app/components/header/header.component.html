@@ -1,0 +1,5 @@
+<header class="flex row">
+    <button class="rounded shadow" [routerLink]="'/'">🏠</button>
+    <button class="rounded shadow" [routerLink]="'/leaderboard'">Classements</button>
+    <button class="rounded shadow" (click)="handleConnection()">{{isLogged ? 'Se déconnecter' : 'Se connecter'}}</button>
+</header>

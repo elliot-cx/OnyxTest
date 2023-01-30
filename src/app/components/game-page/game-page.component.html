@@ -1,0 +1,9 @@
+<div class="content">
+    <div *ngIf="isPlaying" class="infos flex column">
+        <p>Score: {{score}}</p>
+        <p>Temps: {{time}}</p>
+        <p>Click restant : {{nbClicsMax - clicks.length}}</p>
+    </div>
+    <h3 *ngIf="!isPlaying">Cliquez sur l'image pour commencer à jouer</h3>
+    <img [src]="currentImage" [style.top.px]="randomTop" [style.left.px]="randomLeft" (click)="handleImageClick()">
+</div>
